@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WildGuard - Protecting Earth's Fragile Life</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Modernized Styles with a Professional Conservation Theme */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', 'Segoe UI', sans-serif; }
+
+        :root {
+            --primary: #1a472a;    /* Deep Forest Green */
+            --secondary: #2d6a4f;  /* Jungle Green */
+            --accent: #d4a373;     /* Earthy Sand/Savanna */
+            --light: #f8f9fa;
+            --dark: #121212;
+            --white: #ffffff;
+        }
+
+        body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
+
+        header {
+            background: rgba(26, 71, 42, 0.98);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; font-size: 1.7rem; font-weight: 800; letter-spacing: -0.5px; }
+        
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 2.5rem; }
+        nav ul li a { color: var(--white); text-decoration: none; font-weight: 500; transition: 0.3s; font-size: 0.95rem; }
+        nav ul li a:hover { color: var(--accent); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), 
+                        url('https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content { max-width: 850px; margin: 0 auto; }
+        .hero h1 { font-size: 4rem; margin-bottom: 1.5rem; line-height: 1.1; }
+        .hero p { font-size: 1.4rem; margin-bottom: 2.5rem; opacity: 0.9; }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn:hover { background-color: var(--secondary); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+        section { padding: 6rem 0; }
+        .section-title { text-align: center; margin-bottom: 4rem; }
+        .section-title h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; }
+        .section-title p { max-width: 600px; margin: 0 auto; color: #666; }
+
+        /* Statistics Cards */
+        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+        .stat-item { background: var(--white); padding: 3rem 1rem; border-radius: 20px; text-align: center; transition: 0.3s; border-bottom: 4px solid var(--accent); }
+        .stat-item:hover { transform: translateY(-10px); }
+        .stat-item i { font-size: 3rem; color: var(--secondary); margin-bottom: 1.5rem; }
+        .stat-item h3 { font-size: 2.5rem; margin-bottom: 0.5rem; font-weight: 800; color: var(--primary); }
+
+        /* Initiative Cards */
+        .initiatives-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+        .card { background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .card img { width: 100%; height: 250px; object-fit: cover; transition: 0.5s; }
+        .card:hover img { transform: scale(1.05); }
+        .card-body { padding: 2rem; }
+        .card-body h3 { margin-bottom: 1rem; color: var(--primary); font-size: 1.5rem; }
+
+        footer { background: var(--primary); color: var(--white); padding: 5rem 0 2rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; }
+        .footer-logo { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; display: block; }
+        .social-icons { display: flex; gap: 1rem; margin-top: 1.5rem; }
+        .social-icons a { color: var(--white); font-size: 1.2rem; opacity: 0.7; transition: 0.3s; }
+        .social-icons a:hover { opacity: 1; color: var(--accent); }
+
+        @media (max-width: 992px) {
+            .stats, .initiatives-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .stats, .initiatives-grid, .footer-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo"><i class="fas fa-leaf"></i> <span>WILDGUARD</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#impact">Our Impact</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#take-action">Take Action</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Voice for the Voiceless</h1>
+            <p>Every 20 minutes, we lose another species to extinction. Join the front lines of global wildlife conservation today.</p>
+            <a href="#take-action" class="btn">Become a Guardian</a>
+        </div>
+    </section>
+
+    <section id="impact">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Crisis in Numbers</h2>
+                <p>Wildlife populations have declined by an average of 69% since 1970. The time to act is now.</p>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3 class="counter" data-target="42100">0</h3>
+                    <p>Species Threatened</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-paw"></i>
+                    <h3 class="counter" data-target="3900">0</h3>
+                    <p>Wild Tigers Left</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3 class="counter" data-target="220">0</h3>
+                    <p>Protected Zones</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3 class="counter" data-target="15000">0</h3>
+                    <p>Annual Rescues</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" style="background-color: #fff;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Mission in Action</h2>
+                <p>We deploy innovative solutions to protect biodiversity across the globe.</p>
+            </div>
+            <div class="initiatives-grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1564760290292-23341e4df6ec?auto=format&fit=crop&w=600&q=80" alt="Anti-Poaching">
+                    <div class="card-body">
+                        <h3>Anti-Poaching Units</h3>
+                        <p>Training and equipping local rangers to dismantle illegal snares and stop poaching before it happens.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=600&q=80" alt="Habitat">
+                    <div class="card-body">
+                        <h3>Habitat Restoration</h3>
+                        <p>Purchasing and protecting critical biological corridors to ensure safe passage for migrating herds.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?auto=format&fit=crop&w=600&q=80" alt="Marine">
+                    <div class="card-body">
+                        <h3>Marine Sanctuaries</h3>
+                        <p>Establishing "No-Take" zones in our oceans to allow depleted fish stocks and coral reefs to recover.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="take-action">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <span class="footer-logo"><i class="fas fa-leaf"></i> WILDGUARD</span>
+                    <p>WILDGUARD is a global nonprofit dedicated to the protection of endangered species and their natural habitats through science and advocacy.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4>Get Involved</h4>
+                    <br>
+                    <p>Volunteer</p>
+                    <p>Monthly Giving</p>
+                    <p>Corporate Partners</p>
+                    <p>Gift Memberships</p>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <br>
+                    <p><i class="fas fa-envelope"></i> help@wildguard.org</p>
+                    <p><i class="fas fa-phone"></i> +1 (800) WILD-LIFE</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya HQ</p>
+                </div>
+            </div>
+            <div style="text-align:center; padding-top:3rem; margin-top:3rem; border-top:1px solid rgba(255,255,255,0.1); font-size: 0.9rem; opacity: 0.7;">
+                <p>&copy; 2026 WildGuard International. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                const speed = 100; // Animation speed
+                const inc = target / speed;
+
+                const updateCount = () => {
+                    if (count < target) {
+                        count += inc;
+                        counter.innerText = Math.ceil(count).toLocaleString();
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.innerText = target.toLocaleString();
+                    }
+                };
+                updateCount();
+            });
+        }
+
+        // Initialize animation on load
+        window.onload = animateCounters;
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
