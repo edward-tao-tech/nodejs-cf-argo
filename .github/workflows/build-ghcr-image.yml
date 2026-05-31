@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: build-ghcr-image Build and Push Docker Image
 
 on:
   push:
