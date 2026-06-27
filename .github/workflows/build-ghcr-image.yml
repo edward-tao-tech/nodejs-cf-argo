@@ -48,7 +48,7 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64
           tags: |
-            ghcr.io/${{steps.lowercase.outputs.owner}}/nodejs:latest
+            ghcr.io/${{steps.lowercase.outputs.owner}}/edwardnodejs:latest
           labels: |
             org.opencontainers.image.source=https://github.com/${{ github.repository }}
             org.opencontainers.image.description=HTTP Server
