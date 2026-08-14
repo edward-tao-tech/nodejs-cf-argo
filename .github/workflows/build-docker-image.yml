@@ -1,11 +1,12 @@
 name: Publish to Docker Hub
 
 on:
-  push:
-    branches:
-      - main # 如果你的主分支叫 master，请修改此处
-    tags:
-      - 'v*' # 当你推送 v1.0.0 这种版本标签时也会触发发布
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - main # 如果你的主分支叫 master，请修改此处
+  #   tags:
+  #     - 'v*' # 当你推送 v1.0.0 这种版本标签时也会触发发布
 
 jobs:
   build-and-push:
